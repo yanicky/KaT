@@ -7,6 +7,6 @@ While it's being written again(last version is from 2006), You can follow an exa
 
 https://github.com/yanicky/pirl-php-api
 
-Since the code was forked, a refactoring had to be done before getting into KaT-modules.  
+Since the pirl-php-api code was forked, a refactoring had to be done before getting into KaT-modules.  
 
 A bootstrap version will be added here for future use once a new KaT-base is finished. 
