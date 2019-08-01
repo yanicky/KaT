@@ -74,6 +74,7 @@ switch($CHAIN){
 	break;
  case "local":
 	//use this if your running a local pirl node (be sure to start it up with --rpc after the command)
+	// rpchost AND rpcport are required in order to FORCE to use on other server.
 	if(!$RPCHOST){ $RPCHOST = "localhost";}
 	if(!$RPCPORT){ $RPCPORT = "6588";}	
 	$url = 'http://' . $RPCHOST . ':' . $RPCPORT;
