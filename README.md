@@ -24,7 +24,7 @@ You can also run the test-api.sh like this.
 from Browser
 http(s)://hostname/path/to/index.php?CMD=test
 
-Form shell
+From shell
 
 php index.php --CMD=test;
 
