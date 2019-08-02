@@ -57,6 +57,7 @@ http(s)://hostname/path/to/index.php?CMD=help
 Feel free to add pull requests or fork it for your own usage.
 
 /*
+
 Still asking yourself what's a KaT? 
 Well think of it as a simple application, flexible and agile as a Cat, but faithful and predictable as a dog.
 
@@ -65,5 +66,6 @@ Enjoy!
 Please come back later.
 
 yanicky
+
 */
 
