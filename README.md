@@ -18,7 +18,7 @@ Until documentation/reorganization is being managed within KaT, please use these
 
 HOW-TO:
 
-How to run this version? install php-cli and php-curl if needed. you can then run it with command line client using wallet argument.
+How to run this version? install php-cli and php-curl if needed. you can then run it with command line client using wallet argument or served by a webserver of your choice.
 
 $php index.php --wallet=yourwalletaddresshere [--chain=Pirl, Ethereum, local] [--CMD=web3_clientVersion, net_version, getBalance, blockNumber, peerCount,test, help] [--id=integer]
 
