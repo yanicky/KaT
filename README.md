@@ -1,9 +1,9 @@
 # KaT
 Key access Terminal: a customizable functional PHP framework structure for API.
 
-For the moment, this is only a place holder for the future publication of a bootstrap code for the KaT framework.
+For the moment, this is a place holder for the publication of a bootstrap code for the KaT framework.
 
-While it's being written again(last version is from 2006), i will update this framework structure as a demo. 
+While it's being written again(last version is from 2006), i will update the framework structure as a demo. 
 
 I got inspired while contributing on pirl-php-api, so i included the original usage and all my contributed features in a smaller footprint.
 
