@@ -19,7 +19,7 @@ The most basic concepts around KaT are:
 
 ---Input and Output are managed in KaT/ 
 
----Data processing and function are process in KaT_base/.
+---Data processing and functions are processed in KaT_base/.
 
 ---A configurable minimalist approach allowing branches to be disabled easily.
 
