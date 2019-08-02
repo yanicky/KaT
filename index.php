@@ -53,14 +53,17 @@ $BLOCK = $_REQUEST['block'];
 //$addr = "yourwallethere";
 //$CMD = "getBalance";
 //$CHAIN = "local";
+
 // The RPCHOST and RPCPORT only override settings if($CHAIN == "local").
-//$RPCHOST = "localhost";
-//$RPCPORT = 6588;
+// Forced by default to pirl local node.
+// Comment out the following to allow --rpchost and --rpcport. Handle with care as it open to possible abuse if used on webservers.
+$RPCHOST = "localhost";
+$RPCPORT = 6588;
+//
 
 //pass some simple sanity checks
 if (!$CMD){ $CMD = "getDecodedBalance";}
 if (!$ID){ $ID = 1;}
-
 
 switch($CHAIN){
  case "Pirl":
