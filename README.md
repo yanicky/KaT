@@ -3,7 +3,7 @@ Key access Terminal: a customizable functional PHP framework structure for API.
 
 For the moment, this is only a place holder for the future publication of a bootstrap code for the KaT framework.
 
-While it's being written again(last version is from 2006), 
+While it's being written again(last version is from 2006), i will update this framework structure as a demo. 
 
 I got inspired while contributing on pirl-php-api, so i included all features in a smaller footprint.
 
@@ -11,7 +11,7 @@ inspiration: https://github.com/yanicky/pirl-php-api
 
 Since the pirl-php-api code was forked, after just a few commits, i felt that a refactoring had to be done before getting into cool modular structure. Then i understood, that i cannot ignore that roaring KaT anymore. 
 
-So a bootstrap version is being created here, for future public usage. 
+So a new bootstrap version is being created here, for future public usage against comtemporary Web3.0 DATA. The most basic concept around KaT is the condition tree that is populated/validated in a non-blocking manner.
 
 For now please use these examples until documentation is being managed within KaT.
 
@@ -21,7 +21,7 @@ $php index.php --wallet=yourwalletaddresshere [--chain=Pirl, Ethereum, local] [-
 
 You can also run the test-api.sh like this.
 
-from Browser
+from Browser(not tested in cloud, but it works)
 http(s)://hostname/path/to/index.php?CMD=test
 
 From shell
