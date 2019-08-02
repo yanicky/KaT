@@ -5,7 +5,7 @@ For the moment, this is only a place holder for the future publication of a boot
 
 While it's being written again(last version is from 2006), 
 
-I got inspired while contributing on pirl-php-api, so i included all feature in a smaller footprint.
+I got inspired while contributing on pirl-php-api, so i included all features in a smaller footprint.
 
 inspiration: https://github.com/yanicky/pirl-php-api
 
@@ -17,7 +17,7 @@ For now please use these examples until documentation is being managed within Ka
 
 How to run this version? install php-cli and php-curl if needed. you can then run it with command line client using wallet argument.
 
-$php index.php --wallet=yourwalletaddresshere [--chain=Pirl, Ethereum, local] [--CMD=web3_clientVersion, net_version, getBalance, blockNumber, peerCount, help] [--id=integer]
+$php index.php --wallet=yourwalletaddresshere [--chain=Pirl, Ethereum, local] [--CMD=web3_clientVersion, net_version, getBalance, blockNumber, peerCount,test, help] [--id=integer]
 
 You can also run the test-api.sh like this.
 
