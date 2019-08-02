@@ -21,7 +21,7 @@ The most basic concepts around KaT are:
 
 ---Data processing and functions are processed in KaT_base/.
 
----A configurable minimalist approach allowing branches to be disabled easily.
+---A configurable minimalist approach allowing branches to be enabled/disabled easily.
 
 
 Until documentation/reorganization is being managed within KaT, please use these examples for now.
