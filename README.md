@@ -21,7 +21,7 @@ $php index.php --wallet=yourwalletaddresshere [--chain=Pirl, Ethereum, local] [-
 
 You can also run the test-api.sh like this.
 
-from Browser(not tested in cloud, but it works)
+from Browser(not tested in cloud environement, but its tested(nginx/php-fpm)
 
 http(s)://hostname/path/to/index.php?CMD=test
 
