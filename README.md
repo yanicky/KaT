@@ -5,7 +5,7 @@ For the moment, this is only a place holder for the future publication of a boot
 
 While it's being written again(last version is from 2006), i will update this framework structure as a demo. 
 
-I got inspired while contributing on pirl-php-api, so i included all my contributed features in a smaller footprint.
+I got inspired while contributing on pirl-php-api, so i included the original usage and all my contributed features in a smaller footprint.
 
 inspiration: https://github.com/yanicky/pirl-php-api
 
