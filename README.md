@@ -11,9 +11,12 @@ inspiration: https://github.com/yanicky/pirl-php-api
 
 Since the pirl-php-api code was forked, after just a few commits, i felt that a refactoring had to be done before getting into cool modular structure. Then i understood, that i cannot ignore that roaring KaT anymore. 
 
-So a new bootstrap version is being created here, for future public usage against comtemporary Web3.0 DATA. The most basic concept around KaT is the condition tree that is populated/validated in a non-blocking manner.
+So a new bootstrap version is being created here, for future public usage against comtemporary Web3.0 DATA. Datastores will be added once a KaT_base(SQLite) is completed to handle modularity. The most basic concepts around KaT are the condition tree that is populated/validated in a non-blocking manner and the minimalist approach.
 
-For now please use these examples until documentation is being managed within KaT.
+Until documentation/reorganization is being managed within KaT, please use these examples for now.
+(While some CMD names might change in the future, they will be properly transitioned)
+
+HOW-TO:
 
 How to run this version? install php-cli and php-curl if needed. you can then run it with command line client using wallet argument.
 
