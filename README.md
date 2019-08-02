@@ -9,7 +9,7 @@ I got inspired while contributing on pirl-php-api, so i included the original us
 
 inspiration: https://github.com/yanicky/pirl-php-api
 
-Since the pirl-php-api code was forked, after just a few commits, i felt that a refactoring had to be done before getting into cool modular structure. Then i understood, that i cannot ignore that roaring KaT anymore. 
+Since the pirl-php-api code was forked, after just a few commits, i felt that a refactoring had to be done before getting into cool modular structure. Then i understood, that i could not ignore that roaring KaT anymore. 
 
 So a new bootstrap version is being created here, for public usage against comtemporary Web3.0 DATA. Datastores will be added once a KaT_base(SQLite) is completed to handle modularity. The most basic concepts around KaT are the condition tree that is populated/validated in a non-blocking manner and the minimalist approach.
 
