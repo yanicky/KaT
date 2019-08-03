@@ -65,7 +65,7 @@ $RPCPORT = 6588;
 
 //pass some simple sanity checks
 if (!$CMD){ $CMD = "getDecodedBalance";}
-if (!$ID){ $ID = 0;}
+if (!$ID){ $ID = "0";}
 
 switch($CHAIN){
  case "Pirl":
