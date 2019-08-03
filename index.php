@@ -183,12 +183,12 @@ switch($CMD)
         $data['params'] = $params;
         $payload = json_encode($data);
         //do the call
-        $jsondata1 = json_decode(jsonCurl($url, $method, $payload), true);
-	$myarray = explode(",", implode(",",$jsondata1));
-	$pirl = number_format((hexdec($myarray[2])/1000000000000000000), 10, ".", "");
-	$assocArray = array();
-	$assocArray['wallet'] = ''.$addr.'';
-	$assocArray['balance'] = ''.$pirl.'';
+        $jsondata1 = json_decode(jsonCurl($url, $method, $payload), false);
+        $balance_val = $jsondata1->result;
+        $pirl = number_format((hexdec($balance_val)/1000000000000000000), 10, ".", "");
+        $assocArray = array();
+        $assocArray['wallet'] = ''.$addr.'';
+        $assocArray['balance'] = ''.$pirl.'';
 	//encode in json format
 	$jsondata = json_encode($assocArray);
 
