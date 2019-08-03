@@ -212,6 +212,8 @@ switch($CMD)
         if($RUNMODE == "php-cli"){
         echo "Running test from console, please check HOWTO.md for details". $NL;       
         } else {
+	include('test/testweb.php');
+	/*
         $test = "Starting Web test file_get_contents on URI.". $NL;
 
 	$test.= "Testing Wallet Only parameter".$NL; 
@@ -279,7 +281,7 @@ switch($CMD)
         $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
         $test.= file_get_contents($actual_link);
         $test.= $NL;
-
+	*/
 	echo $test;
 	}
 	break;
