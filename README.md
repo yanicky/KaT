@@ -7,7 +7,7 @@ While the KaT_base is being written again(last version is from 2006), i will upd
 
 I got inspired while contributing on pirl-php-api, so i included the original usage and all my contributed features in a smaller footprint.
 
-inspiration: https://github.com/yanicky/pirl-php-api
+Link for the pirl-php-api: https://github.com/yanicky/pirl-php-api
 
 Since the pirl-php-api code was forked, after just a few commits, i felt that a refactoring had to be done before getting into cool modular structure. Then i understood, that i could not ignore that roaring KaT anymore. 
 
@@ -15,13 +15,13 @@ So a new bootstrap version is being created here, for public usage against conte
 
 The most basic concepts around KaT are:
 
----A condition tree that is populated/validated in a non-blocking manner.
+1. A condition tree that is populated/validated in a non-blocking manner.
 
----Input and Output are managed in KaT/ 
+2. Input and Output are managed in KaT/ 
 
----Data processing and functions are processed in KaT_base/.
+3. Data processing and functions are processed in KaT_base/.
 
----A configurable minimalist approach allowing branches to be enabled/disabled easily.
+4. A configurable minimalist approach allowing branches to be enabled/disabled easily.
 
 
 Until documentation/reorganization is being managed within KaT, please use these examples for now.
@@ -30,9 +30,9 @@ Until documentation/reorganization is being managed within KaT, please use these
 HOW-TO:
 
 How to run this version? install php-cli and php-curl if needed. you can then run it with command line client using wallet argument or served by a webserver of your choice.
-
-$php index.php --wallet=yourwalletaddresshere [--chain=Pirl, Ethereum, local] [--CMD=web3_clientVersion, net_version, getBalance, blockNumber, peerCount,test, help] [--id=integer]
-
+```
+php index.php --wallet=yourwalletaddresshere [--chain=Pirl, Ethereum, local] [--CMD=web3_clientVersion, net_version, getBalance, blockNumber, peerCount,test, help] [--id=integer]
+```
 You can also run the test-api.sh like this.
 
 from Browser(not tested in cloud environement, but its tested(nginx/php-fpm)
@@ -40,13 +40,13 @@ from Browser(not tested in cloud environement, but its tested(nginx/php-fpm)
 http(s)://hostname/path/to/index.php?CMD=test
 
 From shell
-
+```
 php index.php --CMD=test;
-
+```
 or
-
+```
 /bin/sh test-api.sh;
-
+```
 Producing an output similar to this:
 
 Testing without parameters
@@ -103,9 +103,7 @@ http(s)://hostname/path/to/index.php?CMD=help
 
 Feel free to add pull requests or fork it for your own usage.
 
-/*
-
-Still asking yourself what's a KaT? 
+### Still asking yourself what's a KaT? 
 Well think of it as a simple application, flexible and agile as a Cat, but faithful and predictable as a dog.
 
 Enjoy!
