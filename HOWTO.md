@@ -1,6 +1,8 @@
 ## HOW-TO:
 
 How to run this version? install php-cli and php-curl if needed. you can then run it with command line client using wallet argument or served by a webserver of your choice.
+
+#### This application default on Pirl.io public gateway if no command or endpoint is specified.
 ```
 php index.php --wallet=yourwalletaddresshere [--chain=Pirl, Ethereum, local] [--CMD=web3_clientVersion, net_version, getBalance, blockNumber, peerCount,test,howto, help] [--id=integer]
 ```
@@ -18,44 +20,29 @@ From your browser(new tests will soon be there)
 http(s)://hostname/path/to/index.php?CMD=test
 
 #### The test should result an output similar to this:
->
-> Testing without parameters
-> url should be in format 'http(s)://hostname/path/to/index.php?wallet=youraddresshere' or using --wallet=yourwallethere from php-cli
-> ***
-> Testing with bad wallet only parameters
-> wallet should be 42 char, including the 0x beginning
-> ***
-> Testing with good wallet parameters only with default parameter
-> {"wallet":"0x256b2b26Fe8eCAd201103946F8C603b401cE16EC","balance":"15760000.0000000000"}***
+> Starting Web test.
+> Testing Wallet Only parameter
+> {"wallet":"0x256b2b26Fe8eCAd201103946F8C603b401cE16EC","balance":"15420000.0000000000"}
+> Testing getBalance with Pirl chain
+> {"jsonrpc":"2.0","id":"0","result":"0xcc14fdfff1a8dad800000"}
 > Testing getBalance with Ethereum chain
 > {"jsonrpc":"2.0","id":"1","result":"0x0"}
-> ***
-> Testing getBalance with bad chain parameter
-> {"jsonrpc":"2.0","id":"2","result":"0xd094f4fd9e5595a000000"}
-> ***
 > Testing blockNumber with Pirl chain
-> {"jsonrpc":"2.0","id":"3","result":"0x423a87"}
-> ***
+> {"jsonrpc":"2.0","id":"2","result":"0x425528"}
 > Testing blockNumber with Ethereum chain
-> {"jsonrpc":"2.0","id":"4","result":"0x7e3e24"}
-> ***
-> Testing peerCount with default chain
-> {"jsonrpc":"2.0","id":"5","result":"0x160"}
-> ***
+> {"jsonrpc":"2.0","id":"3","result":"0x7e5517"}
+> Testing peerCount with Pirl chain
+> {"jsonrpc":"2.0","id":"4","result":"0x15d"}
 > Testing peerCount with Ethereum chain
-> {"jsonrpc":"2.0","id":"6","result":"0xb"}
-> ***
-> Testing net_version with default chain
-> {"jsonrpc":"2.0","id":"7","result":"3125659152"}
-> ***
+> {"jsonrpc":"2.0","id":"5","result":"0xe"}
+> Testing net_version with Pirl chain
+> {"jsonrpc":"2.0","id":"6","result":"3125659152"}
 > Testing net_version with Ethereum chain
-> {"jsonrpc":"2.0","id":"8","result":"1"}
-> ***
-> Testing client_version with Default chain
-> {"jsonrpc":"2.0","id":"9","result":"Pirl/v1.8.27-v6-masternode-content-damocles-4aa88705/linux-amd64/go1.12"}
-> ***
-> Testing client_version with Ethereum chain
-> {"jsonrpc":"2.0","id":"10","result":"cloudflare-geth"}***
+> {"jsonrpc":"2.0","id":"7","result":"1"}
+> Testing web3_clientVersion with Pirl chain
+> {"jsonrpc":"2.0","id":"8","result":"Pirl/v1.8.27-v6-masternode-content-damocles-4aa88705/linux-amd64/go1.12"}
+> Testing web3_clientVersion with Ethereum chain
+> {"jsonrpc":"2.0","id":"9","result":"cloudflare-geth"}
 
 Also...
 
