@@ -5,7 +5,9 @@
 
 // Set Error Level
 error_reporting(0);
+
 include('external/parsedown-1.7.3/Parsedown.php');
+
 function jsonCurl($myurl, $mymethod, $mypayload) 
         {
 	//create a new cURL resource
