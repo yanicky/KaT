@@ -23,7 +23,7 @@
 	$test.= $pirl_last_res;
 	$pirl_lastblock_array = json_decode($pirl_last_res, false);
         $pirl_lastblock = $pirl_lastblock_array->result;
-        $test.= $NL;
+        $test.= $pirl_lastblock.$NL;
 
 	$test.= "Testing getting lastblock with Pirl chain".$NL; 
         $command = "?CMD=eth_getBlockByNumber&chain=Pirl&id=21";
