@@ -217,7 +217,7 @@ switch($CMD)
 	break;
 		
 	case "readme":
-        echo "We are in Howto:" .$NL;
+        echo "We are in Readme:" .$NL;
         $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/README.md');
         $Parsedown = new Parsedown();
 	if($RUNMODE == "php-cli"){
