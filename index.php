@@ -38,7 +38,7 @@ foreach( $argv as $argument ) {
 }
 
 // Create NewLine variable based on usage
-if ($argc > 0) {$NL = "\n";} else {$NL = "</br>";}
+if ($argc > 0) {$NL = "\n"; $RUNMODE = "php-cli";} else {$NL = "</br>"; $RUNMODE = "webserv";}
 
 //if requested, setup variables
 $ID = $_REQUEST['id'];
@@ -207,7 +207,11 @@ switch($CMD)
 	break;
 	
 	case "test":
+	if($RUNMODE == "php-cli"){
 	echo shell_exec("sh ./test-api.sh");
+	} else {
+	echo "Starting Web test.". $NL;	
+	}
 	break;
 
 	default: 
