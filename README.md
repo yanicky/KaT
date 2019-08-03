@@ -37,14 +37,15 @@ php index.php --wallet=yourwalletaddresshere [--chain=Pirl, Ethereum, local] [--
 
 You can also run the test-api.sh like this.
 
-from Browser(new tests will soon be there)
-
-http(s)://hostname/path/to/index.php?CMD=test
-
 From shell(external test with php-cli)
 ```
 sh test-api.sh;
 ```
+
+From your browser(new tests will soon be there)
+
+http(s)://hostname/path/to/index.php?CMD=test
+
 #### The test should result an output similar to this:
 >
 > Testing without parameters
