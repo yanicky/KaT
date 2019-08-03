@@ -213,6 +213,14 @@ switch($CMD)
 	echo "Starting Web test.". $NL;	
 	}
 	break;
+		
+	case "readme":
+        echo "We are in Howto:" .$NL;
+        $html = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/README.md');
+        $Parsedown = new Parsedown();
+        echo $Parsedown->text($html);
+        break;
+		
 	case "howto":
         echo "We are in Howto:" .$NL;
         $html = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/HOWTO.md');
