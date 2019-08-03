@@ -212,7 +212,7 @@ switch($CMD)
         if($RUNMODE == "php-cli"){
         echo "Running test from console, please check HOWTO.md for details". $NL;       
         } else {
-        $test = "Starting Web test.". $NL;
+        $test = "Starting Web test file_get_contents on URI.". $NL;
 
 	$test.= "Testing Wallet Only parameter".$NL; 
         $command = "?wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC";
