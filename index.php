@@ -229,7 +229,7 @@ switch($CMD)
 		
 	case "howto":
         echo "We are in Howto:" .$NL;
-        $html = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/HOWTO.md');
+        $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/HOWTO.md');
         $Parsedown = new Parsedown();
         if($RUNMODE == "php-cli"){
 		echo $markdown;
