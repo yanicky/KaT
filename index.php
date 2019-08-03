@@ -207,14 +207,6 @@ switch($CMD)
 	echo "http(s)://hostname/path/to/index.php?wallet=youraddresshere&chain=local&rpchost=localhost&rpcport=6588" . $NL;
 	echo "http(s)://hostname/path/to/index.php?CMD=help" . $NL;
 	break;
-	
-	case "test":
-	if($RUNMODE == "php-cli"){
-	echo "Running test from console, please check HOWTO.md for details". $NL;	
-	} else {
-	echo "Starting Web test.". $NL;	
-	}
-	break;
 		
 	case "test":
         if($RUNMODE == "php-cli"){
