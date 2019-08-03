@@ -152,6 +152,21 @@ switch($CMD)
         //do the call
         $jsondata = jsonCurl($url, $method, $payload);
         break;
+	
+		
+	case "eth_getBlockByHash":
+        $method = "eth_getBlockByHash";
+        $params = ["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35", true];
+        //setup request to send json via POST
+        $data = array();
+        $data['jsonrpc'] = "2.0";
+        $data['id'] = $ID;
+        $data['method'] = $method;
+        $data['params'] = $params;
+        $payload = json_encode($data);
+        //do the call
+        $jsondata = jsonCurl($url, $method, $payload);
+        break;
 		
 	case "getBalance":
 	// verify validity of the required variables
