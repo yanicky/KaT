@@ -19,29 +19,50 @@ From your browser(new tests will soon be there)
 
 http(s)://hostname/path/to/index.php?CMD=test
 
-#### The test should result an output similar to this:
+#### The test should result an output SIMILAR to this:
 > Starting Web test.
 > Testing Wallet Only parameter
+>
 > {"wallet":"0x256b2b26Fe8eCAd201103946F8C603b401cE16EC","balance":"15420000.0000000000"}
+>
 > Testing getBalance with Pirl chain
+>
 > {"jsonrpc":"2.0","id":"0","result":"0xcc14fdfff1a8dad800000"}
+>
 > Testing getBalance with Ethereum chain
+>
 > {"jsonrpc":"2.0","id":"1","result":"0x0"}
+>
 > Testing blockNumber with Pirl chain
+>
 > {"jsonrpc":"2.0","id":"2","result":"0x425528"}
+>
 > Testing blockNumber with Ethereum chain
+>
 > {"jsonrpc":"2.0","id":"3","result":"0x7e5517"}
+>
 > Testing peerCount with Pirl chain
+>
 > {"jsonrpc":"2.0","id":"4","result":"0x15d"}
+>
 > Testing peerCount with Ethereum chain
+>
 > {"jsonrpc":"2.0","id":"5","result":"0xe"}
+>
 > Testing net_version with Pirl chain
+>
 > {"jsonrpc":"2.0","id":"6","result":"3125659152"}
+>
 > Testing net_version with Ethereum chain
+>
 > {"jsonrpc":"2.0","id":"7","result":"1"}
+>
 > Testing web3_clientVersion with Pirl chain
+>
 > {"jsonrpc":"2.0","id":"8","result":"Pirl/v1.8.27-v6-masternode-content-damocles-4aa88705/linux-amd64/go1.12"}
+>
 > Testing web3_clientVersion with Ethereum chain
+>
 > {"jsonrpc":"2.0","id":"9","result":"cloudflare-geth"}
 
 Also...
