@@ -5,7 +5,7 @@
 
 // Set Error Level
 error_reporting(0);
-
+include('external/parsedown-1.7.3/Parsedown.php');
 function jsonCurl($myurl, $mymethod, $mypayload) 
         {
 	//create a new cURL resource
@@ -213,6 +213,12 @@ switch($CMD)
 	echo "Starting Web test.". $NL;	
 	}
 	break;
+	case "howto":
+        echo "We are in Howto:" .$NL;
+        $html = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/README.md');
+        $Parsedown = new Parsedown();
+        echo $Parsedown->text($html);
+        break;
 
 	default: 
 	echo "********************" . $NL;
