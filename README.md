@@ -27,12 +27,14 @@ The most basic concepts around KaT are:
 Until documentation/reorganization is being managed within KaT, please use these examples for now.
 (While some CMD names might change in the future, they will be properly transitioned)
 
-HOW-TO:
+## HOW-TO:
 
 How to run this version? install php-cli and php-curl if needed. you can then run it with command line client using wallet argument or served by a webserver of your choice.
 ```
 php index.php --wallet=yourwalletaddresshere [--chain=Pirl, Ethereum, local] [--CMD=web3_clientVersion, net_version, getBalance, blockNumber, peerCount,test, help] [--id=integer]
 ```
+## Running Test
+
 You can also run the test-api.sh like this.
 
 from Browser(not tested in cloud environement, but its tested(nginx/php-fpm)
@@ -47,7 +49,7 @@ or
 ```
 /bin/sh test-api.sh;
 ```
-### Producing an output similar to this:
+#### The test should result an output similar to this:
 >
 > Testing without parameters
 > url should be in format 'http(s)://hostname/path/to/index.php?wallet=youraddresshere' or using --wallet=yourwallethere from php-cli
