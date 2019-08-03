@@ -215,7 +215,7 @@ switch($CMD)
 	break;
 	case "howto":
         echo "We are in Howto:" .$NL;
-        $html = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/README.md');
+        $html = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/HOWTO.md');
         $Parsedown = new Parsedown();
         echo $Parsedown->text($html);
         break;
