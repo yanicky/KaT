@@ -208,7 +208,7 @@ switch($CMD)
 	
 	case "test":
 	if($RUNMODE == "php-cli"){
-	echo "Running test from console, please check the HOWTO.md for details". $NL;	
+	echo "Running test from console, please check HOWTO.md for details". $NL;	
 	} else {
 	echo "Starting Web test.". $NL;	
 	}
