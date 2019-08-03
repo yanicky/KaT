@@ -216,16 +216,81 @@ switch($CMD)
 	}
 	break;
 		
-	case "readme":
-        //echo "We are in Readme:" .$NL;
-        $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/README.md');
-        $Parsedown = new Parsedown();
-	if($RUNMODE == "php-cli"){
-		echo $markdown;
-	} else {
-        	echo $Parsedown->text($markdown);
+	case "test":
+        if($RUNMODE == "php-cli"){
+        echo "Running test from console, please check HOWTO.md for details". $NL;       
+        } else {
+        $test = "Starting Web test.". $NL;
+
+	$test.= "Testing Wallet Only parameter".$NL; 
+        $command = "?wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC";
+        $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
+        $test.= file_get_contents($actual_link);
+        $test.= $NL;
+
+        $test.= "Testing getBalance with Pirl chain".$NL; 
+        $command = "?CMD=getBalance&wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC&chain=Pirl&id=0";
+        $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
+        $test.= file_get_contents($actual_link);
+        $test.= $NL;
+
+	$test.= "Testing getBalance with Ethereum chain".$NL; 
+        $command = "?CMD=getBalance&wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC&chain=Ethereum&id=1";
+        $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
+	$test.= file_get_contents($actual_link);
+        $test.= $NL;
+
+	$test.= "Testing blockNumber with Pirl chain".$NL; 
+        $command = "?CMD=blockNumber&wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC&chain=Pirl&id=2";
+        $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
+        $test.= file_get_contents($actual_link);
+        $test.= $NL;
+
+        $test.= "Testing blockNumber with Ethereum chain".$NL; 
+        $command = "?CMD=blockNumber&wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC&chain=Ethereum&id=3";
+        $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
+        $test.= file_get_contents($actual_link);
+        $test.= $NL;
+        
+	$test.= "Testing peerCount with Pirl chain".$NL; 
+        $command = "?CMD=peerCount&wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC&chain=Pirl&id=4";
+        $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
+        $test.= file_get_contents($actual_link);
+        $test.= $NL;
+
+        $test.= "Testing peerCount with Ethereum chain".$NL; 
+        $command = "?CMD=peerCount&wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC&chain=Ethereum&id=5";
+        $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
+        $test.= file_get_contents($actual_link);
+        $test.= $NL;
+
+	$test.= "Testing net_version with Pirl chain".$NL; 
+        $command = "?CMD=net_version&wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC&chain=Pirl&id=6";
+        $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
+        $test.= file_get_contents($actual_link);
+        $test.= $NL;
+
+        $test.= "Testing net_version with Ethereum chain".$NL; 
+        $command = "?CMD=net_version&wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC&chain=Ethereum&id=7";
+        $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
+        $test.= file_get_contents($actual_link);
+        $test.= $NL;
+	
+	$test.= "Testing web3_clientVersion with Pirl chain".$NL; 
+        $command = "?CMD=web3_clientVersion&wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC&chain=Pirl&id=8";
+        $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
+        $test.= file_get_contents($actual_link);
+        $test.= $NL;
+
+        $test.= "Testing web3_clientVersion with Ethereum chain".$NL; 
+        $command = "?CMD=web3_clientVersion&wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC&chain=Ethereum&id=9";
+        $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
+        $test.= file_get_contents($actual_link);
+        $test.= $NL;
+
+	echo $test;
 	}
-	break;
+	break
 		
 	case "howto":
         //echo "We are in Howto:" .$NL;
