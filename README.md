@@ -31,23 +31,19 @@ Until documentation/reorganization is being managed within KaT, please use these
 
 How to run this version? install php-cli and php-curl if needed. you can then run it with command line client using wallet argument or served by a webserver of your choice.
 ```
-php index.php --wallet=yourwalletaddresshere [--chain=Pirl, Ethereum, local] [--CMD=web3_clientVersion, net_version, getBalance, blockNumber, peerCount,test, help] [--id=integer]
+php index.php --wallet=yourwalletaddresshere [--chain=Pirl, Ethereum, local] [--CMD=web3_clientVersion, net_version, getBalance, blockNumber, peerCount,test,howto, help] [--id=integer]
 ```
 ## Running Test
 
 You can also run the test-api.sh like this.
 
-from Browser(not tested in cloud environement, but its tested(nginx/php-fpm)
+from Browser(new tests will soon be there)
 
 http(s)://hostname/path/to/index.php?CMD=test
 
-From shell
+From shell(external test with php-cli)
 ```
-php index.php --CMD=test;
-```
-or
-```
-/bin/sh test-api.sh;
+sh test-api.sh;
 ```
 #### The test should result an output similar to this:
 >
