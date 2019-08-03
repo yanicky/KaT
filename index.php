@@ -282,7 +282,7 @@ switch($CMD)
 
 	echo $test;
 	}
-	break
+	break;
 		
 	case "howto":
         //echo "We are in Howto:" .$NL;
