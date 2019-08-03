@@ -218,16 +218,24 @@ switch($CMD)
 		
 	case "readme":
         echo "We are in Howto:" .$NL;
-        $html = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/README.md');
+        $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/README.md');
         $Parsedown = new Parsedown();
-        echo $Parsedown->text($html);
-        break;
+	if($RUNMODE == "php-cli"){
+		echo $markdown;
+	} else {
+        	echo $Parsedown->text($markdown);
+	}
+	break;
 		
 	case "howto":
         echo "We are in Howto:" .$NL;
         $html = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/HOWTO.md');
         $Parsedown = new Parsedown();
-        echo $Parsedown->text($html);
+        if($RUNMODE == "php-cli"){
+		echo $markdown;
+	} else {
+        	echo $Parsedown->text($markdown);
+	}
         break;
 
 	default: 
