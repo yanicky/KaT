@@ -26,7 +26,7 @@
         $test.= $pirl_lastblock.$NL;
 
 	$test.= "Testing getting lastblock with Pirl chain".$NL; 
-        $command = "?CMD=eth_getBlockByNumber&chain=Pirl&id=21";
+        $command = "?CMD=eth_getBlockByNumber&chain=Pirl&id=21&block=".$pirl_lastblock;
         $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
         $test.= file_get_contents($actual_link);
         $test.= $NL;
