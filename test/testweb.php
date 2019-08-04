@@ -34,9 +34,19 @@
         $test.= "Testing blockNumber with Ethereum chain".$NL; 
         $command = "?CMD=blockNumber&wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC&chain=Ethereum&id=3";
         $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
+        $ethereum_last_res = file_get_contents($actual_link);
+	$test.= $ethereum_last_res;
+	$ethereum_lastblock_array = json_decode($ethereum_last_res, false);
+        $ethereum_lastblock = $ethereum_lastblock_array->result;
+        $test.= $ethereum_lastblock.$NL;
+        
+	$test.= "Testing getting lastblock with Ethereum chain".$NL; 
+        $command = "?CMD=eth_getBlockByNumber&chain=Ethereum&id=31&block=".$ethereum_lastblock;
+        $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
         $test.= file_get_contents($actual_link);
         $test.= $NL;
-        
+
+
 	$test.= "Testing peerCount with Pirl chain".$NL; 
         $command = "?CMD=peerCount&wallet=0x256b2b26Fe8eCAd201103946F8C603b401cE16EC&chain=Pirl&id=4";
         $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$command;
