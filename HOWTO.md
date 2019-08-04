@@ -15,7 +15,7 @@ From shell(external test with php-cli)
 sh test-api.sh;
 ```
 
-From your browser(new tests will soon be there)
+From your browser(New Test Sequence)
 
 http(s)://hostname/path/to/index.php?CMD=test
 
