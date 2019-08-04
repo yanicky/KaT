@@ -15,7 +15,7 @@ From shell(external test with php-cli)
 sh test-api.sh;
 ```
 
-From your browser(New Test Sequence)
+From your browser(New Test Sequence does not seem to be Cloudflare friendly. Investigating)
 
 http(s)://hostname/path/to/index.php?CMD=test
 
