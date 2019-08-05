@@ -30,7 +30,7 @@ The most basic concepts around KaT are:
 4. A configurable minimalist approach allowing branches to be enabled/disabled easily.
 
 ## How to
-Check the HOWTO.md <https://github.com/yanicky/KaT/HOWTO.md>  or use CMD=howto for usage examples.
+Check the HOWTO.md or use CMD=howto for usage examples.
 
 (While some CMD and/or OPTION names might change in the future, they will be properly transitioned.)
 
