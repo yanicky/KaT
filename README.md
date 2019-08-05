@@ -1,7 +1,7 @@
 # KaT
 Key access Terminal: a customizable functional PHP framework structure for API.
 
-I will update this repository as a demo for the framework structure. Please check <https://github.com/yanicky/KaT/HOWTO.md> for usage details.
+I will update this repository as a demo for the framework structure. Please check HOWTO.md for usage details.
 
 I got inspired while contributing on pirl-php-api, so i included the original usage(wallet=0xANYPIRLWALLET) and all my contributed features in a different packaging so i could use it to connect to other CHAINS and APIs.
 
