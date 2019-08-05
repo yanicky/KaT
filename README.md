@@ -1,17 +1,23 @@
 # KaT
 Key access Terminal: a customizable functional PHP framework structure for API.
 
-For the moment, this is a place holder for the publication of a bootstrap code for the KaT framework.
+I will update this repository as a demo for the framework structure. Please check <https://github.com/yanicky/KaT/HOWTO.md> for usage details.
 
-While the KaT_base is being written again(last version is from 2006), i will update this repository as a demo for the framework structure. 
+I got inspired while contributing on pirl-php-api, so i included the original usage(wallet=0xANYPIRLWALLET) and all my contributed features in a different packaging so i could use it to connect to other CHAINS and APIs.
 
-I got inspired while contributing on pirl-php-api, so i included the original usage and all my contributed features in a smaller footprint.
+Here is the link my fork of the pirl-php-api: <https://github.com/yanicky/pirl-php-api>
 
-Link to the pirl-php-api: <https://github.com/yanicky/pirl-php-api>
+For the moment, this repository(KaT) is a place holder for the publication of a bootstrap code for the KaT framework while the KaT_base is being written and documented again(last version is from 2006). 
 
-Since the pirl-php-api code was forked, after just a few commits, i felt that a refactoring had to be done before getting into cool modular structure. Then i understood, that i could not ignore that roaring KaT anymore. 
+This code is intended to be working without modification on at least PHP-CLI and PHP-FPM(PHP_VERSION <= 7.0) but portability to HHVM and compliance with <https://hhvm.com> specifications will soon fall among top priorities and constraint.
+ 
+This new bootstrap version for the KaT framework is being created here, for public usage against multiple contemporary Web3.0 APIs & DATASET. Enjoy!
 
-So a new bootstrap version is being created here, for public usage against contemporary Web3.0 DATA. Datastores will be added once a KaT_base(SQLite) is completed to handle modularity. 
+Datastores will be added once a KaT_base(SQLite) is completed to handle modularity.
+
+The master branch might not be 24/7 stable, simply because most edits are done directly on github web interface before re-testing the whole install/test sequence, please use lastest released version instead. 
+
+##### This application is written and distributed as a DEMO for the KaT framework. It's neither considered(yet) optimized or secured in my perspective of things. Please use with care and considerations.
 
 The most basic concepts around KaT are:
 
@@ -26,7 +32,7 @@ The most basic concepts around KaT are:
 ## How to
 Check the HOWTO.md <https://gitgub.com/yanicky/KaT/HOWTO.md>  or use CMD=howto for usage examples.
 
-(While some CMD names might change in the future, they will be properly transitioned)
+(While some CMD and/or OPTION names might change in the future, they will be properly transitioned.)
 
 Feel free to add pull requests or fork it for your own usage.
 
