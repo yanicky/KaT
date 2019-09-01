@@ -1,6 +1,6 @@
 {
     "name": "yanicky/kat",
-    "description": "KaT implementation in Hacklang",
+    "description": "KaT implementation in PHP",
     "keywords": ["yanicky", "KaT", "php"],
     "license": "MIT",
     "extra": {
