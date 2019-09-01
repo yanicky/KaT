@@ -1,0 +1,14 @@
+{
+    "name": "yanicky/kat",
+    "description": "KaT implementation in Hacklang",
+    "keywords": ["yanicky", "KaT", "hack"],
+    "license": "MIT",
+    "extra": {
+      "branch-alias": {
+        "dev-master": "1.x-dev"
+      }
+    },
+    "require": {
+        "erusev/parsedown": "^1.7"
+    }
+}
