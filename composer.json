@@ -1,7 +1,7 @@
 {
     "name": "yanicky/kat",
     "description": "KaT implementation in Hacklang",
-    "keywords": ["yanicky", "KaT", "hack"],
+    "keywords": ["yanicky", "KaT", "php"],
     "license": "MIT",
     "extra": {
       "branch-alias": {
