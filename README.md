@@ -9,7 +9,7 @@ Here is the link my fork of the pirl-php-api: <https://github.com/yanicky/pirl-p
 
 For the moment, this repository(KaT) is a place holder for the publication of a bootstrap code for the KaT framework while the KaT_base is being written and documented again(last version is from 2006). 
 
-This code is intended to be working without modification on at least PHP-CLI and PHP-FPM(PHP_VERSION <= 7.0) but portability to HHVM and compliance with <https://hhvm.com> specifications will soon fall among top priorities and constraint. Check [KaT.HH](https://github.com/yanicky/KaT.HH) and [HHVM-LIVE](https://github.com/yanicky/HHVM-LIVE) for hacklang implementation.
+This code is intended to be working without modification on at least PHP-CLI and PHP-FPM(PHP_VERSION <= 7.0) but portability to HHVM and compliance with <https://hhvm.com> specifications will soon fall among top priorities and constraint. Check [KaT.HH](https://github.com/yanicky/KaT.HH) and [HHVM-LIVE](https://github.com/yanicky/HHVM-LIVE) for hacklang implementation and tools.
  
 This new bootstrap version for the KaT framework is being created here, for public usage against multiple contemporary Web3.0 APIs & DATASET. Enjoy!
 
