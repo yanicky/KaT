@@ -6,7 +6,11 @@
 // Set Error Level
 error_reporting(0);
 
-include('external/parsedown-1.7.3/Parsedown.php');
+if(is_dir('vendor')){
+        include('vendor/autoload.php');
+}else{
+        include('external/parsedown-1.7.3/Parsedown.php');
+}
 
 function jsonCurl($myurl, $mymethod, $mypayload) 
         {
