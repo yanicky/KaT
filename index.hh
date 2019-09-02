@@ -1,3 +1,3 @@
 <?hh
-$inithack = 'initmini.hack';
-include($inithack);
+$initmini = 'initmini.hack';
+include($initmini);
