@@ -26,7 +26,7 @@ if ($argc > 0) {$NL = "\n"; $RUNMODE = "cli";} else {$NL = "</br>"; $RUNMODE = "
 $minibase = file_get_contents('src/minibase.hack');
 eval($minibase);
 
-if(isset($_ENV["HHVM"])){
+if(defined("HHVM_VERSION")){
 
 if(is_dir('vendor')){
         require __DIR__ . '/vendor/hh_autoload.hh';
