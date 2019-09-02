@@ -23,7 +23,8 @@ foreach( $argv as $argument ) {
 // Create NewLine variable based on usage
 if ($argc > 0) {$NL = "\n"; $RUNMODE = "cli";} else {$NL = "</br>"; $RUNMODE = "webserv";}
 
-include("src/minibase.hack");
+$minibase = file_get_contents('src/minibase.hack');
+eval($minibase);
 
 if(isset($_ENV["HHVM"])){
 
