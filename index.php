@@ -3,35 +3,11 @@
 //
 // require php-curl to be installed/enabled.
 
+
 // Set Error Level
 error_reporting(0);
 
-if(is_dir('vendor')){
-        include('vendor/autoload.php');
-}else{
-        include('external/parsedown-1.7.3/Parsedown.php');
-}
-
-function jsonCurl($myurl, $mymethod, $mypayload) 
-        {
-	//create a new cURL resource
-	$ch = curl_init($myurl);
-	curl_setopt($ch, CURLOPT_POST, TRUE);
-	//attach encoded JSON string to the POST fields
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $mypayload);
-	//set the content type to application/json
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-	//return response instead of outputting
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	//execute the POST request
-	$res = curl_exec($ch);
-	//close cURL resource
-	curl_close($ch);
-	//return the result
-	return $res;
-	}
-
-// To be used with php-cli in console (ie: php index.php --wallet=yourwalletaddresshere)
+// To be used with hhvm-cli in console (ie: hhvm index.hh --wallet=yourwalletaddresshere)
 foreach( $argv as $argument ) {
         if( $argument == $argv[ 0 ] ) continue;
 
@@ -41,19 +17,90 @@ foreach( $argv as $argument ) {
         //echo $variableName . " = " . $variableValue . "\n";
         // Optionally store the variable in $_REQUEST
         $_REQUEST[ $variableName ] = $variableValue;
+	//$envvariable = $variableName . "=" . $variableValue;
+	//putenv($envvariable);
+	//echo getenv($variableName);
 }
 
 // Create NewLine variable based on usage
-if ($argc > 0) {$NL = "\n"; $RUNMODE = "php-cli";} else {$NL = "</br>"; $RUNMODE = "webserv";}
+if ($argc > 0) {$NL = "\n"; $RUNMODE = "cli";} else {$NL = "</br>"; $RUNMODE = "webserv";}
+
+$minibase = file_get_contents('src/minibase.hack');
+eval($minibase);
+
+if(defined("HHVM_VERSION")){
+
+if(is_dir('vendor')){
+        require __DIR__ . '/vendor/hh_autoload.hh';
+}else{
+        echo "Dependencies not installed, please run:" . $NL . "composer.phar install" . $NL; exit;
+	}
+} else {
+if(is_dir('vendor')){
+        require __DIR__ . '/vendor/autoload.php';
+}else{
+        echo "Dependencies not installed, please run:" . $NL . "composer.phar install" . $NL; exit;
+	}
+}
+
 
 //if requested, setup variables
-$ID = $_REQUEST['id'];
-$addr = $_REQUEST['wallet'];
-$CMD = $_REQUEST['CMD'];
-$CHAIN = $_REQUEST['chain'];
-$RPCHOST = $_REQUEST['rpchost'];
-$RPCPORT = $_REQUEST['rpcport'];
-$BLOCK = $_REQUEST['block'];
+
+if(isset($_REQUEST["wallet"])){
+$envvariable = "wallet" . "=" . $_REQUEST["wallet"];
+putenv($envvariable);
+}
+if(isset($_REQUEST["CMD"])){
+$envvariable = "CMD" . "=" . $_REQUEST["CMD"];
+putenv($envvariable);
+}
+
+if(isset($_REQUEST["id"])){
+$envvariable = "id" . "=" . $_REQUEST["id"];
+putenv($envvariable);
+}
+
+if(isset($_REQUEST["chain"])){
+$envvariable = "chain" . "=" . $_REQUEST["chain"];
+putenv($envvariable);
+}
+
+if(isset($_REQUEST["rpchost"])){
+$envvariable = "rpchost" . "=" . $_REQUEST["rpchost"];
+putenv($envvariable);
+}
+
+if(isset($_REQUEST["rpcport"])){
+$envvariable = "rpcport" . "=" . $_REQUEST["rpcport"];
+putenv($envvariable);
+}
+
+if(isset($_REQUEST["block"])){
+$envvariable = "block" . "=" . $_REQUEST["block"];
+putenv($envvariable);
+}
+
+if(getenv("id")){
+$ID = getenv("id");
+}
+if(getenv("CMD")){
+$CMD = getenv("CMD");
+}
+if(getenv("chain")){
+$CHAIN = getenv("chain");
+}
+if(getenv("wallet")){
+$addr = getenv("wallet");
+}
+if(getenv("rpchost")){
+$RPCHOST = getenv("rpchost");
+}
+if(getenv("rpcport")){
+$RPCPORT = getenv("rpcport");
+}
+if(getenv("block")){
+$BLOCK = getenv("block");
+}
 
 // If Required uncomment/force some parameters here
 //$addr = "yourwallethere";
@@ -90,30 +137,29 @@ switch($CHAIN){
 	break;
 
 default:
-	
 	$CHAIN="Pirl";
         $url = 'https://wallrpc.pirl.io';
 	break;
 }
 
 switch($CMD)
-	{
-	case "web3_clientVersion":
+        {
+        case "web3_clientVersion":
         $method = "web3_clientVersion";
-	$params = [];
-	//setup request to send json via POST
-	$data = array();
-	$data['jsonrpc'] = "2.0";
-	$data['id'] = $ID;
-	$data['method'] = $method;
-	$data['params'] = $params;
-	$payload = json_encode($data);
-	//do the call
-	$jsondata = jsonCurl($url, $method, $payload);
+        $params = [];
+        //setup request to send json via POST
+        $data = array();
+        $data['jsonrpc'] = "2.0";
+        $data['id'] = $ID;
+        $data['method'] = $method;
+        $data['params'] = $params;
+        $payload = json_encode($data);
+        //do the call
+        $jsondata = jsonCurl($url, $method, $payload);
 
         break;
-		
-	case "net_version":
+
+        case "net_version":
         $method = "net_version";
         $params = [];
         //setup request to send json via POST
@@ -125,11 +171,10 @@ switch($CMD)
         $payload = json_encode($data);
         //do the call
         $jsondata = jsonCurl($url, $method, $payload);
-
-        break;
-	
+	break;
+		
 	case "blockNumber":
-	$method = "eth_blockNumber";
+        $method = "eth_blockNumber";
         $params = [];
         //setup request to send json via POST
         $data = array();
@@ -140,10 +185,10 @@ switch($CMD)
         $payload = json_encode($data);
         //do the call
         $jsondata = jsonCurl($url, $method, $payload);
-	break;
-		
-		
-	case "peerCount":
+        break;
+
+                
+        case "peerCount":
         $method = "net_peerCount";
         $params = [];
         //setup request to send json via POST
@@ -187,7 +232,7 @@ switch($CMD)
 		
 	case "getBalance":
 	// verify validity of the required variables
-	if ( $addr == "" ) {echo "url should be in format 'http(s)://hostname/path/to/index.php?wallet=youraddresshere' or using --wallet=yourwallethere from php-cli" . $NL; exit;}
+	if ( $addr == "" ) {echo "url should be in format 'http(s)://hostname/path/to/index.php?wallet=youraddresshere' or using --wallet=yourwallethere from hhvm-cli" . $NL; exit;}
 	if ( strlen($addr) != "42" ) { echo "wallet should be 42 char, including the 0x beginning" . $NL; exit;}
 	$method = "eth_getBalance";
 	$params = array($addr, "latest");
@@ -205,7 +250,7 @@ switch($CMD)
 	
 	case "getDecodedBalance":
         // verify validity of the required variables
-        if ( $addr == "" ) {echo "url should be in format 'http(s)://hostname/path/to/index.php?wallet=youraddresshere' or using --wallet=yourwallethere from php-cli" . $NL; exit;}
+        if ( $addr == "" ) {echo "url should be in format 'http(s)://hostname/path/to/index.php?wallet=youraddresshere' or using --wallet=yourwallethere from hhvm-cli" . $NL . "Address is: " . $addr . $NL; exit;}
         if ( strlen($addr) != "42" ) { echo "wallet should be 42 char, including the 0x beginning" . $NL; exit;}
         $method = "eth_getBalance";
         $params = array($addr, "latest");
@@ -241,34 +286,34 @@ switch($CMD)
 	break;
 		
 	case "test":
-        if($RUNMODE == "php-cli"){
+        if($RUNMODE == "cli"){
         echo "Running test from console, please check HOWTO.md for details". $NL;       
         } else {
-	include('test/testweb.php');
+	include('test/test-web.hack');
 	
-	if($test!=""){echo $test;}else{ echo "No test results";}
+	if($test!=""){echo $test;}else{ echo "No test results" . $NL . "running shell test" . $NL; $result =shell_exec("sh ./test-api.sh"); echo $result;}
 	}
 	break;
 	
 	case "readme":
         //echo "We are in Howto:" .$NL;
-        $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/README.md');
-        $Parsedown = new Parsedown();
-        if($RUNMODE == "php-cli"){
+        $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT.HH/master/README.md');
+        
+        if($RUNMODE == "cli"){
 		echo $markdown;
 	} else {
-        	echo $Parsedown->text($markdown);
+        	echo render($markdown);
 	}
         break;
 		
 	case "howto":
         //echo "We are in Howto:" .$NL;
-        $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/HOWTO.md');
-        $Parsedown = new Parsedown();
-        if($RUNMODE == "php-cli"){
+        $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT.HH/master/HOWTO.md');
+        
+        if($RUNMODE == "cli"){
 		echo $markdown;
 	} else {
-        	echo $Parsedown->text($markdown);
+        	echo render($markdown);
 	}
         break;
 
