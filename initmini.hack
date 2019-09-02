@@ -1,4 +1,4 @@
-// Tested with HHVM, PHP and PHP-FPM
+// Tested with HHVM
 //
 // require curl to be installed/enabled.
 
@@ -20,45 +20,27 @@ foreach( $argv as $argument ) {
 	//echo getenv($variableName);
 }
 
-function jsonCurl($myurl, $mymethod, $mypayload) 
-        {
-	//create a new cURL resource
-	$ch = curl_init($myurl);
-	curl_setopt($ch, CURLOPT_POST, TRUE);
-	//attach encoded JSON string to the POST fields
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $mypayload);
-	//set the content type to application/json
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-	//return response instead of outputting
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	//execute the POST request
-	$res = curl_exec($ch);
-	//close cURL resource
-	curl_close($ch);
-	//return the result
-	return $res;
-	}
 // Create NewLine variable based on usage
 if ($argc > 0) {$NL = "\n"; $RUNMODE = "cli";} else {$NL = "</br>"; $RUNMODE = "webserv";}
 
+$minibase = file_get_contents('src/minibase.hack');
+eval($minibase);
+
 if(defined("HHVM_VERSION")){
+
 if(is_dir('vendor')){
         require __DIR__ . '/vendor/hh_autoload.hh';
-	$cli = 'hack';
 }else{
         echo "Dependencies not installed, please run:" . $NL . "composer.phar install" . $NL; exit;
 	}
 } else {
 if(is_dir('vendor')){
         require __DIR__ . '/vendor/autoload.php';
-	$cli = 'php';
 }else{
         echo "Dependencies not installed, please run:" . $NL . "composer.phar install" . $NL; exit;
 	}
 }
 
-$minibase = "src/minibase." . $cli;
-include($minibase);
 
 //if requested, setup variables
 
