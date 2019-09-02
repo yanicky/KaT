@@ -1,3 +1,3 @@
 <?php
-$inithack = file_get_contents('index.hack');
+$inithack = file_get_contents('initmini.hack');
 eval($inithack);
