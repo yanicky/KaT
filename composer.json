@@ -9,6 +9,8 @@
       }
     },
     "require": {
-        "erusev/parsedown": "^1.7"
+        "erusev/parsedown": "^1.7",
+        "hhvm/hhvm-autoload": "^2.0",
+        "facebook/fbmarkdown": "^1.6"
     }
 }
