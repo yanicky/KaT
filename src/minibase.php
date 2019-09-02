@@ -1,3 +1,4 @@
+<?php
 namespace Facebook\Markdown;
 
 function render(string $markdown): string {
