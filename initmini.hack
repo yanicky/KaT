@@ -60,7 +60,7 @@ if(is_dir('vendor')){
 	}
 }
 
-include("src/minibase.php");
+include("src/minibase.hack");
 
 //if requested, setup variables
 
