@@ -26,20 +26,20 @@ if ($argc > 0) {$NL = "\n"; $RUNMODE = "cli";} else {$NL = "</br>"; $RUNMODE = "
 if(defined("HHVM_VERSION")){
 if(is_dir('vendor')){
         require __DIR__ . '/vendor/hh_autoload.hh';
-	$minibase = 'src/minibase.hack';
+	$cli = 'hack';
 }else{
         echo "Dependencies not installed, please run:" . $NL . "composer.phar install" . $NL; exit;
 	}
 } else {
 if(is_dir('vendor')){
         require __DIR__ . '/vendor/autoload.php';
-	$minibase = 'src/minibase.php';
+	$cli = 'php';
 }else{
         echo "Dependencies not installed, please run:" . $NL . "composer.phar install" . $NL; exit;
 	}
 }
 
-
+$minibase = "src/minibase." . $cli;
 include($minibase);
 
 //if requested, setup variables
