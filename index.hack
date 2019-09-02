@@ -23,7 +23,7 @@ foreach( $argv as $argument ) {
 // Create NewLine variable based on usage
 if ($argc > 0) {$NL = "\n"; $RUNMODE = "cli";} else {$NL = "</br>"; $RUNMODE = "webserv";}
 
-include("src/minibase.hh");
+include("src/minibase.hack");
 
 if(is_dir('vendor')){
         require __DIR__ . '/vendor/hh_autoload.hh';
