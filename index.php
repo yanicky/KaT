@@ -4,6 +4,5 @@
 // require php-curl to be installed/enabled.
 
 
-$inithack = file_get_contents('initmini.hack');
-eval($inithack);
-?>
+$initmini = 'initmini.php';
+include($initmini);
