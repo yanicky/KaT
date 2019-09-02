@@ -25,7 +25,7 @@ foreach( $argv as $argument ) {
 // Create NewLine variable based on usage
 if ($argc > 0) {$NL = "\n"; $RUNMODE = "cli";} else {$NL = "</br>"; $RUNMODE = "webserv";}
 
-$minibase = file_get_contents('src/minibase.hack');
+$minibase = file_get_contents('src/minibase.php');
 eval($minibase);
 
 if(defined("HHVM_VERSION")){
