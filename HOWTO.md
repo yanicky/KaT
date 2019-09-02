@@ -12,9 +12,12 @@ You can also run the test-api.sh like this.
 
 From shell(external test with php-cli)
 ```
-sh test-api.sh;
+sh test-api-php.sh;
 ```
-
+From shell(external test with hhvm-cli)
+```
+sh test-api-hhvm.sh;
+```
 From your browser(New Test Sequence does not seem to be Cloudflare friendly. Investigating)
 
 http(s)://hostname/path/to/index.php?CMD=test
