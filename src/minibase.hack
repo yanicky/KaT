@@ -1,4 +1,4 @@
-use namespace Facebook\Markdown;
+namespace Facebook\Markdown;
 
 function render(string $markdown): string {
   $ast = Markdown\parse(new Markdown\ParserContext(), $markdown);
