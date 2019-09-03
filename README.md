@@ -22,26 +22,28 @@ The master branch might not be 24/7 stable, simply because most edits are done d
 ### Requirement 
 * Require PHP.
 * Require composer available in PATH for dependencies installation.
+
+
 ### Optionally 
 * NGINX Web Server
 * HipHop Virtual Machine : [HHVM](https://hhvm.com).
 
 For a complete development environment please check yanicky/[HHVM-LIVE](https://github.com/yanicky/HHVM-LIVE): a live-build config to create a bootable ISO image for web  development/deployment with [HHVM](https://hhvm.com), [NGINX](https://nginx.com) and [PHP-FPM](https://php.net) among other daemons/tools.
 
-1. ``` git clone https://github.com/yanicky/KaT.HH;```
-
-2. ``` cd KaT.HH; ```
-
-3. ``` composer.phar install; ```
-
-4. ``` hhvm index.hh --CMD=howto; ```
-
-## How to
+### How to
 Check the HOWTO.md or use CMD=howto for usage examples.
 
 (While some CMD and/or OPTION names might change in the future, they will be properly transitioned.)
 
 Feel free to add pull requests or fork it for your own usage.
+
+1. ``` git clone https://github.com/yanicky/KaT;```
+
+2. ``` cd KaT; ```
+
+3. ``` composer.phar install; ```
+
+4. ``` php index.php --CMD=howto; ```
 
 ### Still asking yourself what's a KaT? 
 Well think of it as a simple application, flexible and agile as a Cat, but faithful and predictable as a dog.
