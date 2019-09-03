@@ -19,15 +19,22 @@ The master branch might not be 24/7 stable, simply because most edits are done d
 
 ##### This application is written and distributed as a DEMO for the KaT framework. It's neither considered(yet) optimized or secured in my perspective of things. Please use with care and considerations.
 
-The most basic concepts around KaT are:
+### Requirement 
+* Require PHP.
+* Require composer available in PATH for dependencies installation.
+### Optionally 
+* NGINX Web Server
+* HipHop Virtual Machine : [HHVM](https://hhvm.com).
 
-1. A condition tree that is populated/validated in a non-blocking manner.
+For a complete development environment please check yanicky/[HHVM-LIVE](https://github.com/yanicky/HHVM-LIVE): a live-build config to create a bootable ISO image for web  development/deployment with [HHVM](https://hhvm.com), [NGINX](https://nginx.com) and [PHP-FPM](https://php.net) among other daemons/tools.
 
-2. Input and Output are managed in KaT/ 
+1. ``` git clone https://github.com/yanicky/KaT.HH;```
 
-3. Data processing and functions are processed in KaT_base/.
+2. ``` cd KaT.HH; ```
 
-4. A configurable minimalist approach allowing branches to be enabled/disabled easily.
+3. ``` composer.phar install; ```
+
+4. ``` hhvm index.hh --CMD=howto; ```
 
 ## How to
 Check the HOWTO.md or use CMD=howto for usage examples.
@@ -38,6 +45,16 @@ Feel free to add pull requests or fork it for your own usage.
 
 ### Still asking yourself what's a KaT? 
 Well think of it as a simple application, flexible and agile as a Cat, but faithful and predictable as a dog.
+
+The most basic concepts around KaT are:
+
+1. A condition tree that is populated/validated in a non-blocking manner.
+
+2. Input and Output are managed in KaT/ 
+
+3. Data processing and functions are processed in KaT_base/.(not implemented)
+
+4. A configurable minimalist approach allowing branches to be enabled/disabled easily.
 
 Enjoy!
 
