@@ -309,7 +309,7 @@ switch($CMD)
         } else {
 	include('test/test-web.hack');
 	
-	if($test!=""){echo $test;}else{ echo "No test results" . $NL . "running shell test" . $NL; $result =shell_exec("sh ./test-api.sh"); echo $result;}
+	if($test!=""){echo $test;}else{ echo "No test results" . $NL . "running shell test" . $NL; $result =shell_exec("sh ./test-api-php.sh"); echo $result;}
 	}
 	break;
 	
@@ -326,7 +326,7 @@ switch($CMD)
 		
 	case "howto":
         //echo "We are in Howto:" .$NL;
-        $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT.HH/master/HOWTO.md');
+        $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/HOWTO.md');
         
         if($RUNMODE == "cli"){
 		echo $markdown;
