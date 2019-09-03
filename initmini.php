@@ -317,7 +317,7 @@ switch($CMD)
 	
 	case "readme":
         //echo "We are in Howto:" .$NL;
-        $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT.HH/master/README.md');
+        $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/README.md');
         
         if($RUNMODE == "cli"){
 		echo $markdown;
@@ -328,7 +328,7 @@ switch($CMD)
 		
 	case "howto":
         //echo "We are in Howto:" .$NL;
-        $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT.HH/master/HOWTO.md');
+        $markdown = file_get_contents('https://raw.githubusercontent.com/yanicky/KaT/master/HOWTO.md');
         
         if($RUNMODE == "cli"){
 		echo $markdown;
